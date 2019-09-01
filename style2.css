@@ -1,0 +1,13 @@
+.secondary {
+    height: 110vh;
+    position: relative;
+    background: #d1c4e9;
+}
+
+.secondary-inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}

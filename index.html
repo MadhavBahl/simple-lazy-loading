@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lazy Loading</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+    <section class="primary">
+        <div class="primary-inner">
+            <h1>This content is visible</h1>
+            <h4>Height of this content is 110vh</h4>
+            <h6>Stylesheet for this content will be loaded at the beginning itself</h6>
+        </div>
+    </section>
+
+    <section class="secondary">
+        <div class="secondary-inner">
+            <h1>This content is not visible</h1>
+            <h6>Stylesheet for this content will be loaded lazily</h6>
+        </div>
+    </section>
+
+    <script>
+        const loadStyle = src => {
+            if (document.createStylesheet) {
+                document.createStylesheet(src);
+            } else {
+                const stylesheet = document.createElement ('link');
+                stylesheet.href = src;
+                stylesheet.type = 'text/css';
+                stylesheet.rel = 'stylesheet';
+                document.getElementsByTagName('head')[0].appendChild(stylesheet);
+            }
+        }
+
+        let scrollFlag = false;
+
+        window.onscroll = () => {
+            if (!scrollFlag) {
+                console.log ('Started Scrolling!');
+                setTimeout (() => {
+                    loadStyle ('./style2.css');
+                }, 1000);
+                scrollFlag = true;
+            }
+        }
+    </script>
+</body>
+</html>
