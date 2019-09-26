@@ -1,8 +1,7 @@
-# Learn Lazy Loading Through a Simple Example
 
-> Let's load that heavy second CSS file only after the user scrolls down
+# Learn Lazy Loading Through a Simple Example
 
-Read the medium blog at: http://madhavbahl.tech/lazyloading
+Let’s load that heavy second CSS file only after the user scrolls down
 
 ![](https://cdn-images-1.medium.com/max/2800/1*OIeSke0xle0FTZ4fy1l9qQ.png)
 
@@ -91,11 +90,11 @@ Let’s suppose that you are loading stuff that is not currently visible to user
 
 1. You are wasting the precious time that could be used to render only the data that is currently being displayed to the user. He might get annoyed by the slow loading and even leave the website/uninstall the app
 
-2. You are wasting the precious data. I agree that many people have unlimited data these days, but the app has to be optimized for all users and let’s say a particular user group is using a limited data plan, loading things that they might never see would be a waste of their money
+1. You are wasting the precious data. I agree that many people have unlimited data these days, but the app has to be optimized for all users and let’s say a particular user group is using a limited data plan, loading things that they might never see would be a waste of their money
 
-3. Waste of processing power, agree that it might be comparitively very small, but still why waste it?
+1. Waste of processing power, agree that it might be comparitively very small, but still why waste it?
 
-4. In cases of websites/webapps, CSS is render blocking, until CSSOM is created fully, render tree will not be created, so load only whatever is really required.
+1. In cases of websites/webapps, CSS is render blocking, until CSSOM is created fully, render tree will not be created, so load only whatever is really required.
 
 Now I guess you really understand the importance, so let’s move to the final and most interesting section of this blog :)
 
